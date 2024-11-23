@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的个人主页</title>
+<style type="text/css">
+body, td, th {
+    color: #ffffff;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(to bottom, #1F1C2C, #4A4A8C, #928DAB);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 60px;
+    overflow-y: scroll;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: gold;
+    color: black;
+    border-radius: 5px;
+}
+
+a:link {
+    color: #0024FF;
+}
+
+a:active {
+    color: #FF0004;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 80px;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.particle {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="navbar">
+    <a href="index.html">个人主页</a>
+    <a href="web/game.html">游戏推荐</a>
+    <a href="web/music.html">歌曲推荐</a>
+    <a href="web/qingnianyuan.html">青年园</a>
+    <a href="web/books.html">书籍摘录</a>
+</div>
+
+<h1>WELCOME TO MY PROFILE</h1>
+<p>这是挖掘机技术7218班周瑞麟的个人资料</p>
+<p>这是921寝室传送门&nbsp;</p>
+<p>我们一生不过是清醒地穿过梦境，每个人只不过是岁月的一个幽灵。——Franz Kafka</p>
+<p>一生唯爱奶龙</p>
+<img src="image/nailong.jpg" alt="奶龙图片" width="250" height="400" usemap="#Map"/>
+<map name="Map">
+  <area shape="rect" coords="0,0,250,400" href="https://baike.baidu.com/item/%E5%A5%B6%E9%BE%99/64161212?fr=aladdin">
+</map>
+
+<script>
+let particleCount = 0;
+
+document.addEventListener('mousemove', function(e) {
+    if (particleCount > 50) return;
+
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    document.body.appendChild(particle);
+
+    particle.style.left = (e.clientX - 5) + 'px';
+    particle.style.top = (e.clientY - 5) + 'px';
+
+    setTimeout(() => {
+        particle.remove();
+        particleCount--;
+    }, 1000);
+    particleCount++;
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MUSIC</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #1F1C2C, #928DAB);
+        overflow-y: scroll;
+        color: white;
+        padding-top: 60px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px auto;
+        max-width: 800px;
+        line-height: 1.6;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background-color: gold;
+        color: black;
+        border-radius: 5px;
+    }
+
+    img {
+        display: block;
+        margin: 20px auto;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: gold;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(0); }
+    }
+
+    .italic {
+        font-style: italic;
+    }
+</style>
+</head>
+
+<body>
+<div class="navbar">
+    <a href="../index.html">个人主页</a>
+    <a href="game.html">游戏推荐</a>
+    <a href="music.html">歌曲推荐</a>
+    <a href="qingnianyuan.html">青年园</a>
+    <a href="books.html">书籍摘录</a>
+</div>
+
+<h1>这是我的音乐推荐</h1>
+
+<p>Pacific Coast Highway In The Movies (feat. Rivers Cuomo of Weezer) - AWOLNATION / Weezer</p>
+<p class="italic">"My silverscreen, my misery, my love, my defeat"</p>
+<img src="../image/pac.png" alt="Pacific Coast Highway">
+
+<p>APT. - ROSÉ / Bruno Mars</p>
+<p class="italic">"All you gotta do is just meet me at the</p>
+<p class="italic">APT APT"</p>
+<img src="../image/APT.png" alt="APT.">
+
+<p>Demons - The Imagine Dragons</p>
+<p class="italic">"No matter what we breed</p>
+<p class="italic">We still are made of greed"</p>
+<img src="../image/de.png" alt="Demons">
+
+<p>Counting Stars - One Republic</p>
+<p class="italic">"Everything that kills me makes me feel alive"</p>
+<img src="../image/countspng.png" alt="Counting Stars">
+
+<p>Numb - Linkin Park</p>
+<p class="italic">"Feeling so faithless, lost under the surface"</p>
+<img src="../image/numb.png" alt="Numb">
+
+<script>
+    document.addEventListener('mousemove', function(e) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        document.body.appendChild(particle);
+
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+
+        setTimeout(() => {
+            particle.remove();
+        }, 1000);
+    });
+</script>
+</body>
+</html>
+
+
+
+
