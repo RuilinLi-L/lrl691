@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>青年园</title>
+<style type="text/css">
+
+body {
+    background: linear-gradient(to bottom, #1F1C2C, #928DAB); 
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+    text-align: center;
+    padding-top: 60px; 
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: gold;
+    color: black;
+    border-radius: 5px;
+}
+
+
+img {
+    max-width: 30%; 
+    height: auto; 
+    margin: 30px auto; 
+    display: block; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+}
+
+
+p {
+    font-size: 18px;
+    margin: 15px auto;
+    line-height: 1.8;
+    max-width: 800px; 
+}
+
+
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    img {
+        max-width: 90%; 
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+    transform: translate(-50%, -50%); 
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="index.html">个人主页</a>
+    <a href="game.html">游戏推荐</a>
+    <a href="music.html">歌曲推荐</a>
+    <a href="qingnianyuan.html">青年园</a>
+    <a href="books.html">书籍摘录</a>
+</div>
+
+
+<p>草木生欢喜，山水解忧愁</p>
+<img src="../image/qny2.jpg" alt="草木图片"/>
+
+<p>Life never fades away in the vastness, I am reborn in the greenery.</p>
+<img src="../image/qny1.png" alt="生命图片"/>
+
+<p>叶子已拿定绿色的主意</p>
+<p>让花朵放心</p>
+<p>去做那些万紫千红的事</p>
+<img src="../image/qny3.jpg" alt="花朵图片"/>
+
+<!-- 鼠标粒子效果 -->
+<script>
+let particleCount = 0;
+
+document.addEventListener('mousemove', function(e) {
+    if (particleCount > 50) return; 
+
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    document.body.appendChild(particle);
+
+    
+    particle.style.left = e.pageX + 'px';
+    particle.style.top = e.pageY + 'px';
+
+    
+    setTimeout(() => {
+        particle.remove();
+        particleCount--;
+    }, 1000);
+    particleCount++;
+});
+</script>
+</body>
+</html>
+
+
+
+

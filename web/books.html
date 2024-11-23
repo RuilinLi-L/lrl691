@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>书籍摘录</title>
+<style type="text/css">
+
+body, td, th {
+    color: #000000;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+    color: white;
+    margin: 0;
+    overflow-y: scroll;
+    padding-top: 60px; 
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: white; 
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: gold;
+    color: black;
+    border-radius: 5px;
+}
+
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px auto;
+    max-width: 800px;
+    line-height: 2; 
+}
+
+
+img {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.particle {
+    position: fixed; 
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+</style>
+</head>
+
+<body>
+<!-- 导航栏 -->
+<div class="navbar">
+    <a href="index.html">个人主页</a>
+    <a href="game.html">游戏推荐</a>
+    <a href="music.html">歌曲推荐</a>
+    <a href="qingnianyuan.html">青年园</a>
+    <a href="books.html">书籍摘录</a>
+</div>
+
+<!-- 书籍摘录内容 -->
+<p>So we beat on, boats against the current, borne back ceaselessly into the past.</p>
+<p>于是我们继续奋力向前，逆水行舟，被不断地向后推移，直至回到往昔岁月。——《了不起的盖茨比》</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>After all, tomorrow is another day.</p>
+<p>毕竟，明天又是另外的一天呢。——《飘》</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>C’était le soleil du crépuscule, mais nous l’avions pris pour la lumière del’aube.</p>
+<p>这是黄昏的太阳，我们却把它当成了黎明的曙光。——《巴黎圣母院》</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>从前的日色变得慢&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 车，马，邮件都慢&nbsp;</p>
+<p>一生只够爱一个人&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp;从前的锁也好看&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;钥匙精美有样子&nbsp;</p>
+<p>&nbsp;你锁了 人家就懂了&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<img src="../image/book1.jpg" width="600" height="400" alt="书籍图片"/>
+
+<script>
+// 粒子效果
+let particleCount = 0;
+
+document.addEventListener('mousemove', function(e) {
+    if (particleCount > 50) return; // 限制粒子数量
+
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    document.body.appendChild(particle);
+
+    // 设置粒子位置：修正为鼠标中心
+    particle.style.left = (e.clientX - 5) + 'px';
+    particle.style.top = (e.clientY - 5) + 'px';
+
+    // 移除粒子
+    setTimeout(() => {
+        particle.remove();
+        particleCount--;
+    }, 1000);
+    particleCount++;
+});
+</script>
+</body>
+</html>
+
+
