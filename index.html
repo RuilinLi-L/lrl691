@@ -64,6 +64,38 @@ p {
     line-height: 1.6;
 }
 
+.table-container {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column; /* 改为纵向排列 */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid gold;
+    width: 50%; /* 限制表格宽度 */
+}
+
+.table-row {
+    display: flex;
+    width: 100%; /* 每行宽度占满 */
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.table-container .label,
+.table-container .value {
+    font-size: 20px;
+    color: white;
+    width: 45%; /* 保证标签和值都有合适的宽度 */
+}
+
+.table-container .label {
+    font-weight: bold;
+    color: gold;
+}
+
 .particle {
     position: fixed;
     width: 10px;
@@ -99,9 +131,31 @@ p {
 <h1>WELCOME TO MY PROFILE</h1>
 <p>这是挖掘机技术7218班周瑞麟的个人资料</p>
 <p>这是<a href="https://ruilinli-l.github.io/dorm/" target="_blank">921寝室传送门</a></p>
+
 <p>我们一生不过是清醒地穿过梦境，每个人只不过是岁月的一个幽灵。——Franz Kafka</p>
-<p>一生唯爱奶龙</p>
+
+<div class="table-container">
+    <div class="table-row">
+        <div class="label">姓名：</div>
+        <div class="value">周瑞麟</div>
+    </div>
+    <div class="table-row">
+        <div class="label">爱好：</div>
+        <div class="value">阅读 小号 跑步</div>
+    </div>
+    <div class="table-row">
+        <div class="label">年龄：</div>
+        <div class="value">114514岁</div>
+    </div>
+    <div class="table-row">
+        <div class="label">专业：</div>
+        <div class="value">挖掘机技术</div>
+    </div>
+</div>
+
 <img src="image/nailong.jpg" alt="奶龙图片" width="250" height="400" usemap="#Map"/>
+<p>一生唯爱奶龙</p>
+
 <map name="Map">
   <area shape="rect" coords="0,0,250,400" href="https://baike.baidu.com/item/%E5%A5%B6%E9%BE%99/64161212?fr=aladdin">
 </map>
