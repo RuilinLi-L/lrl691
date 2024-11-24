@@ -99,6 +99,28 @@
     .game-item:hover .info {
         display: block;
     }
+
+    /* 粒子样式 */
+    .particle {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: gold;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
 </style>
 </head>
 
@@ -138,8 +160,32 @@
         <div class="info">文明6<br>“这个世界蕴含奇迹之多，绝非远古先知的梦境所能构想。”</div>
     </div>
 </div>
+
+<script>
+    let particleCount = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        if (particleCount > 50) return;  // 限制粒子数量
+
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        document.body.appendChild(particle);
+
+        particle.style.left = (e.clientX - 5) + 'px';
+        particle.style.top = (e.clientY - 5) + 'px';
+
+        setTimeout(() => {
+            particle.remove();
+            particleCount--;
+        }, 1000);
+
+        particleCount++;
+    });
+</script>
+
 </body>
 </html>
+
 
 
 
